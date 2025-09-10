@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuacaLAB</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .active-scroll {
+      color: #3ba84f !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Section -->
+  <nav id="navbar-cuaca" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid mx-auto">
+      <a class="navbar-brand d-flex align-items-center" data-aos="fade-right">
+        <img src='assets/logo.png' alt="Logo Payung" class="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center mx-2" id="navbarNav">
+        <ul class="nav-links mx-auto mb-2 lg-0">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fitur">Fitur</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cuaca">Prakiraan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#artikel">Artikel</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang-aplikasi">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        </ul>
+        <a class="mx-2" href="#cuaca" style="text-decoration: none;">
+        <button class="cek-cuaca-btn mx-auto lg-0" data-aos="fade-left">
+          <span class="search-icon"><i class="bi bi-search"></i></span>
+          Cek Cuaca Sekarang
+        </button>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section position-relative text-white">
+    <div class="hero-overlay">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="display-5 fw-bold"><span class="green-text">Cek Cuaca Terpercaya dan Real-Time di<br>Seluruh Indonesia</span></h1>
+        <p class="lead mt-3">Prakiraan Harian, Notifikasi Cuaca Ekstrem, dan Peta Interaktif untuk Anda</p>
+        <div class="hero-buttons">
+          <a href="#fitur"><button class="btn-primary">Mulai Sekarang</button></a>
+          <a href="#cuaca"><button class="btn-outline">Lihat Prakiraan Harian</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fitur Utama Section -->
+  <section id="fitur" class="fitur section">
+    <div class="container">
+      <h2 class="fitur-title" data-aos="fade-up">Fitur Utama</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-right">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-cloud-fill"></i></div>
+            <p>Prakiraan<br>Harian & Mingguan</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-right">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-bar-chart-fill"></i></div>
+            <p>Indeks Cuaca<br>Tambahan</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-right">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <p>Pilih Lokasi +<br>Lokasi Favorit</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-right">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+            <p>Notifikasi<br>Cuaca Ekstrem</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-left">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-map-fill"></i></div>
+            <p>Peta<br>Interaktif</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-left">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-book-fill"></i></div>
+            <p>Artikel<br>Edukasi Ringan</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3" data-aos="fade-left">
+          <div class="fitur-card">
+            <div class="fitur-icon"><i class="bi bi-envelope-paper-fill"></i></div>
+            <p>Form<br>Laporan Cuaca</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tampilan Cuaca Real Time Section -->
+  <section id="cuaca" class="cuaca-section section mx-auto">
+    <h2 data-aos="fade-up">Tampilan Cuaca Real-Time</h2>
+    
+    <div class="search-box" data-aos="fade-right">
+      <input type="text" id="search-input" placeholder="Masukkan nama kota...">
+      <button type="button" id="search-btn" class="btn">Cari</button>
+    </div>
+
+    <div id="weather-details" class="cuaca-card hidden"></div>
+
+    <div id="forecast-container" class="forecast-container hidden"></div>
+  </section>
+
+  <!-- Section Artikel -->
+  <section id="artikel" class="artikel-section section">
+    <h2 class="artikel-title" data-aos="fade-right">Artikel Lainnya</h2>
+    <div class="artikel-container">
+      <!-- Kartu Artikel 1 -->
+      <div class="artikel-card" data-aos="fade-right">
+        <img src="assets/artikel1.jpg" alt="Gambar Artikel" class="artikel-image" />
+        <p class="artikel-date">8 Mei 2025</p>
+        <h3 class="artikel-headline">
+          Apa Itu Indeks UV dan Kenapa Penting untuk Diketahui?
+        </h3>
+        <h3 class="artikel-p">
+          Paparan sinar matahari memang baik untuk tubuh, tapi terlalu lama di bawah sinar UV berbahaya. Yuk, pelajari cara membaca indeks UV harian agar kamu bisa tetap dengan aman di luar ruangan!
+        </h3>
+        <a href="#" class="artikel-link">Baca selengkapnya →</a>
+      </div>
+
+      <!-- Kartu Artikel 2 -->
+      <div class="artikel-card" data-aos="fade-right">
+        <img src="assets/artikel2.jpg" alt="Gambar Artikel" class="artikel-image" />
+        <p class="artikel-date">8 Mei 2025</p>
+        <h3 class="artikel-headline">
+          Kenapa Hujan Bisa Tiba-tiba Turun Meski Langit Cerah?
+        </h3>
+        <h3 class="artikel-p">
+          Pernah merasa langit masih cerah, tapi tiba-tiba turun hujan? Fenomena ini bisa dijelaskan lewat dinamika awan dan suhu. Cuaca memang tak selalu bisa ditebak mata, tapi bisa dipelajari!
+        </h3>
+        <a href="#" class="artikel-link">Baca selengkapnya →</a>
+      </div>
+
+      <!-- Kartu Artikel 3 -->
+      <div class="artikel-card" data-aos="fade-left">
+        <img src="assets/artikel3.jpg" alt="Gambar Artikel" class="artikel-image" />
+        <p class="artikel-date">8 Mei 2025</p>
+        <h3 class="artikel-headline">
+          Kelembapan Udara Tinggi = Gerah? Ini Penjelasannya.
+        </h3>
+        <h3 class="artikel-p">
+          Suhu tidak selalu jadi penyebab gerah. Kadang, kelembapan tinggi membuat keringat tidak cepat menguap. Baca penjelasan lengkapnya dan ketahui kapan waktu terbaik untuk beraktivitas!
+        </h3>
+        <a href="#" class="artikel-link">Baca selengkapnya →</a>
+      </div>
+
+      <!-- Kartu Artikel 4 -->
+      <div class="artikel-card" data-aos="fade-left">
+        <img src="assets/artikel4.avif" alt="Gambar Artikel" class="artikel-image" />
+        <p class="artikel-date">8 Mei 2025</p>
+        <h3 class="artikel-headline">
+          Apa Bedanya Cuaca dan Iklim?
+        </h3>
+        <h3 class="artikel-p">
+          Cuaca berubah setiap hari, iklim berubah dalam jangka panjang. Yuk, kenali perbedaannya agar tidak salah sebut!
+        </h3>
+        <a href="#" class="artikel-link">Baca selengkapnya →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Tentang Aplikasi -->
+  <section id="tentang-aplikasi" class="tentang-aplikasi section">
+    <div class="container">
+      <h2 class="judul-section">Tentang Aplikasi</h2>
+      <div class="logo-cuacalab" data-aos="flip-left">
+        <img src="assets/logo.png" alt="Payung" />
+      </div>
+      <div class="deskripsi-aplikasi mx-auto" data-aos="zoom-in">
+        <p>
+          WeatherLab adalah platform informasi cuaca digital yang dirancang untuk memberikan data cuaca real-time, praktis, dan mudah dipahami oleh siapa saja. Kami hadir untuk membantu masyarakat Indonesia merencanakan aktivitas sehari-hari—mulai dari bekerja, bertani, hingga bepergian—dengan informasi cuaca yang akurat dan terkini. Dengan tampilan yang bersih dan interaktif, fitur lengkap seperti prakiraan harian, peta interaktif, hingga notifikasi cuaca ekstrem, WeatherLab berkomitmen menjadi sahabat cuaca terbaik bagi pengguna di seluruh penjuru Indonesia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section FAQ -->
+  <section id="faq" class="faq-section section py-5">
+    <div class="container">
+      <h2 class="faq-title" data-aos="fade-up">FAQ</h2>
+      
+      <div class="row justify-content-center mx-3">
+      <div class="faq-item" data-aos="fade-right">
+        <button class="faq-question">BAGAIMANA CARA MEMBACA SUHU PADA PRAKIRAAN CUACA?</button>
+        <div class="faq-answer">
+          <p>Suhu biasanya ditampilkan dalam derajat Celsius (°C) dan menunjukkan perkiraan suhu tertinggi dan terendah dalam sehari. Contohnya: 25°C / 18°C berarti suhu maksimal 25°C dan minimal 18°C.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-left">
+        <button class="faq-question">APA ITU INDEKS UV DAN MENGAPA PENTING?</button>
+        <div class="faq-answer">
+          <p>Indeks UV menunjukkan tingkat paparan sinar ultraviolet dari matahari.<br>
+            • Skala 0 - 11+: Semakin tinggi angkanya, semakin besar risiko kulit terbakar.<br>
+            • Gunakan pelindung seperti sunscreen, topi, atau baju lengan panjang saat indeks UV tinggi.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-right">
+        <button class="faq-question">APAKAH PRAKIRAAN CUACA SELALU AKURAT?</button>
+        <div class="faq-answer">
+          <p>Prakiraan cuaca adalah hasil pemodelan data dan pengamatan atmosfer. Walaupun tidak 100% akurat, tingkat ketepatannya terus meningkat berkat teknologi satelit dan model cuaca terbaru. Biasanya, prakiraan 1–3 hari ke depan memiliki akurasi tinggi.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-left">
+        <button class="faq-question">MENGAPA CUACA BISA BERUBAH TIBA - TIBA MESKIPUN RAMALANNYA BERBEDA?</button>
+        <div class="faq-answer">
+          <p>Cuaca dipengaruhi banyak faktor dinamis seperti kelembapan, arah angin, dan tekanan udara. Perubahan lokal yang cepat seperti badai mendadak bisa terjadi, meskipun tidak terdeteksi dalam prakiraan harian.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-right">
+        <button class="faq-question">APA BEDA ANTARA PRAKIRAAN HARIAN DAN MINGGUAN?</button>
+        <div class="faq-answer">
+          <p>Prakiraan Harian: Lebih rinci dan akurat karena menggunakan data jangka pendek.<br>
+            Prakiraan Mingguan: Memberikan gambaran umum cuaca dalam seminggu, tapi tingkat akurasinya bisa menurun semakin jauh waktunya.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact Form -->
+  <section id="contact" class="contact-section section container py-5">
+    <h2 class="contact-title mb-5" data-aos="fade-up">Contact Form</h2>
+    <div class="row justify-content-center mx-3">
+      <div class="col-md-6" data-aos="fade-right">
+        <form>
+          <div class="mb-4">
+            <label for="name" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="name" placeholder="Nama Anda" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Alamat Email" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="form-label">Pesan</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Kirim Pesan</button>
+        </form>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="bg-light w-100 h-100"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Footer -->
+  <footer class="footer py-4 px-3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+          <img src="assets/logo.png" alt="Logo Payung" class="footer-logo img-fluid">
+        </div>
+        <div class="col-12 col-md-8 text-center text-md-end">
+          <p class="mb-1 fw-semibold">Menyediakan cuaca, menghubungkan kehidupan.</p>
+          <p class="mb-0 fw-semibold" style="opacity: 0.9;">© 2025 WeatherLab. Untuk kenyamanan, keselamatan, dan perencanaan Anda. Inspired by CuacaLab.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
